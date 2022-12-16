@@ -2,7 +2,7 @@ import json
 import requests
 from lxml import html
 
-url = 'https://habr.com/ru/all/'
+url = 'https://habr.com/ru/all'
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36',
@@ -23,7 +23,7 @@ for article in articles:
     link = article.xpath("h2[@class='tm-article-snippet__title tm-article-snippet__title_h2']/a/@href")
 
     article_dict[theme[0]] = {
-        'author': author[0],
+        'author': author,
         'data_published': data_published[0],
         'link': url + link[0]
     }
