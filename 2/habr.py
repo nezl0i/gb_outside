@@ -22,10 +22,10 @@ for article in articles:
     theme = article.xpath("h2[@class='tm-article-snippet__title tm-article-snippet__title_h2']/a/span/text()")
     link = article.xpath("h2[@class='tm-article-snippet__title tm-article-snippet__title_h2']/a/@href")
 
-    article_dict[theme] = {
-        'author': author,
-        'data_published': data_published,
-        'link': url + link
+    article_dict[theme[0]] = {
+        'author': author[0],
+        'data_published': data_published[0],
+        'link': url + link[0]
     }
 
 with open('article_habr.json', 'w', encoding='utf-8') as file:
